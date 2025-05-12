@@ -1,0 +1,226 @@
+@charset "UTF-8";
+
+/* VARIÁVEIS DE CORES */
+:root {
+  --primary: #4361ee;
+  --primary-light: #4895ef;
+  --secondary: #3f37c9;
+  --dark: #3a0ca3;
+  --darker: #2a0a6e;
+  --light: #f8f9fa;
+  --success: #4cc9f0;
+  --danger: #f72585;
+  --warning: #f8961e;
+  --info: #7209b7;
+  --gray: #adb5bd;
+  --gray-dark: #495057;
+}
+
+/* RESET E CONFIGURAÇÕES GERAIS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #8c9776;
+  color: var(--gray-dark);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+.container {
+  width: 100%;
+  max-width: 800px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 2.5rem;
+  margin: 2rem 0;
+}
+
+/* TIPOGRAFIA */
+h1 {
+  color: var(--darker);
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+h2 {
+  color: var(--secondary);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* FORMULÁRIO */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+legend {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--primary-light);
+  width: 100%;
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--gray-dark);
+}
+
+label[required]::after {
+  content: " *";
+  color: var(--danger);
+}
+
+.colapsavel {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin-top: 1.5rem;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.colapsavel-titulo {
+  padding: 1rem;
+  background-color: var(--light);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  color: var(--gray-dark);
+  transition: background-color 0.3s;
+}
+
+.colapsavel-titulo:hover {
+  background-color: #f1f3f5;
+}
+
+.colapsavel-conteudo {
+  padding: 1rem;
+  display: none;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.seta {
+  transition: transform 0.3s ease;
+}
+
+.colapsavel.aberto .seta {
+  transform: rotate(180deg);
+}
+
+
+input:not([type="radio"], [type="checkbox"]),
+select,
+textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+}
+
+button[type="submit"] {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+button[type="submit"]:hover {
+  background-color: var(--secondary);
+  transform: translateY(-2px);
+}
+
+/* MENSAGENS DE ALERTA */
+.alert {
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.alert.success {
+  background-color: rgba(76, 201, 240, 0.2);
+  color: var(--success);
+  border-left: 4px solid var(--success);
+}
+
+.alert.error {
+  background-color: rgba(247, 37, 133, 0.2);
+  color: var(--danger);
+  border-left: 4px solid var(--danger);
+}
+
+/* ELEMENTOS ESPECÍFICOS */
+select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1em;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+  .container {
+    padding: 1.5rem;
+  }
+  
+  h1 {
+    font-size: 1.8rem;
+  }
+}
+
+/* ANIMAÇÕES */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.container {
+  animation: fadeIn 0.5s ease-out;
+}

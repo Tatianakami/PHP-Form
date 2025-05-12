@@ -1,0 +1,6 @@
+Iniciando processamento do formulário
+Query SQL: INSERT INTO usuarios (
+        nome, sobrenome, telefone, email, data_nascimento,
+        idade, cep, endereco, numero, estado, estado_nome, senha
+    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Dados inseridos com sucesso!
