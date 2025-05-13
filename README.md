@@ -1,5 +1,5 @@
 📝 README - Sistema de Cadastro de Usuários
-<img src="http://localhost/cursophp/projeto_php/assets/image/nova.png" alt="Formulário" width="600">
+<img src="assets/image/nova.png" alt="Formulário" width="600">
 
 📌 Visão Geral
 Sistema completo de cadastro de usuários com validações robustas, persistência em banco de dados MySQL e interface moderna. Desenvolvido em PHP puro seguindo as melhores práticas de segurança e usabilidade.
